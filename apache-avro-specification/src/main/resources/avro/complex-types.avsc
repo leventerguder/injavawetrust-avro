@@ -1,0 +1,44 @@
+[
+
+  {
+    "namespace": "com.injavawetrust.dto",
+    "type": "enum",
+    "name": "Suit2",
+    "symbols": [
+      "SPADES",
+      "HEARTS",
+      "DIAMONDS",
+      "CLUBS"
+    ]
+  },
+
+  {
+    "namespace": "com.injavawetrust.dto",
+    "type": "record",
+    "name": "ComplexTypes",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "favorite_number",
+        "type": [
+          "int",
+          "null"
+        ]
+      },
+      {
+        "name": "parameters",
+        "type": {
+          "type": "array",
+          "items": "string"
+        }
+      },
+      {
+        "name": "suit",
+        "type": "com.injavawetrust.dto.Suit2"
+      }
+    ]
+  }
+]

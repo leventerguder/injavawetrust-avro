@@ -1,0 +1,11 @@
+{
+  "namespace": "com.injavawetrust.dto",
+  "type": "enum",
+  "name": "Suit",
+  "symbols": [
+    "SPADES",
+    "HEARTS",
+    "DIAMONDS",
+    "CLUBS"
+  ]
+}
