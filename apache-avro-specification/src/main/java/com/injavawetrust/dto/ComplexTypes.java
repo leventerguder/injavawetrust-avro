@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8452000714110236646L;
+  private static final long serialVersionUID = -8815634035427808730L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ComplexTypes\",\"namespace\":\"com.injavawetrust.dto\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"parameters\",\"type\":{\"type\":\"array\",\"items\":\"string\"}},{\"name\":\"suit\",\"type\":{\"type\":\"enum\",\"name\":\"Suit2\",\"symbols\":[\"SPADES\",\"HEARTS\",\"DIAMONDS\",\"CLUBS\"]}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ComplexTypes\",\"namespace\":\"com.injavawetrust.dto\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"parameters\",\"type\":{\"type\":\"array\",\"items\":\"string\"}},{\"name\":\"suit\",\"type\":{\"type\":\"enum\",\"name\":\"Suit2\",\"symbols\":[\"SPADES\",\"HEARTS\",\"DIAMONDS\",\"CLUBS\"]}},{\"name\":\"properties\",\"type\":{\"type\":\"map\",\"values\":\"int\"}},{\"name\":\"optional\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"fixed_type\",\"type\":{\"type\":\"fixed\",\"name\":\"MD5\",\"size\":16}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -77,6 +77,9 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
   private java.lang.Integer favorite_number;
   private java.util.List<java.lang.CharSequence> parameters;
   private com.injavawetrust.dto.Suit2 suit;
+  private java.util.Map<java.lang.CharSequence,java.lang.Integer> properties;
+  private java.lang.CharSequence optional;
+  private com.injavawetrust.dto.MD5 fixed_type;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -91,12 +94,18 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
    * @param favorite_number The new value for favorite_number
    * @param parameters The new value for parameters
    * @param suit The new value for suit
+   * @param properties The new value for properties
+   * @param optional The new value for optional
+   * @param fixed_type The new value for fixed_type
    */
-  public ComplexTypes(java.lang.CharSequence name, java.lang.Integer favorite_number, java.util.List<java.lang.CharSequence> parameters, com.injavawetrust.dto.Suit2 suit) {
+  public ComplexTypes(java.lang.CharSequence name, java.lang.Integer favorite_number, java.util.List<java.lang.CharSequence> parameters, com.injavawetrust.dto.Suit2 suit, java.util.Map<java.lang.CharSequence,java.lang.Integer> properties, java.lang.CharSequence optional, com.injavawetrust.dto.MD5 fixed_type) {
     this.name = name;
     this.favorite_number = favorite_number;
     this.parameters = parameters;
     this.suit = suit;
+    this.properties = properties;
+    this.optional = optional;
+    this.fixed_type = fixed_type;
   }
 
   @Override
@@ -113,6 +122,9 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
     case 1: return favorite_number;
     case 2: return parameters;
     case 3: return suit;
+    case 4: return properties;
+    case 5: return optional;
+    case 6: return fixed_type;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -126,6 +138,9 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
     case 1: favorite_number = (java.lang.Integer)value$; break;
     case 2: parameters = (java.util.List<java.lang.CharSequence>)value$; break;
     case 3: suit = (com.injavawetrust.dto.Suit2)value$; break;
+    case 4: properties = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 5: optional = (java.lang.CharSequence)value$; break;
+    case 6: fixed_type = (com.injavawetrust.dto.MD5)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -199,6 +214,57 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
   }
 
   /**
+   * Gets the value of the 'properties' field.
+   * @return The value of the 'properties' field.
+   */
+  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getProperties() {
+    return properties;
+  }
+
+
+  /**
+   * Sets the value of the 'properties' field.
+   * @param value the value to set.
+   */
+  public void setProperties(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+    this.properties = value;
+  }
+
+  /**
+   * Gets the value of the 'optional' field.
+   * @return The value of the 'optional' field.
+   */
+  public java.lang.CharSequence getOptional() {
+    return optional;
+  }
+
+
+  /**
+   * Sets the value of the 'optional' field.
+   * @param value the value to set.
+   */
+  public void setOptional(java.lang.CharSequence value) {
+    this.optional = value;
+  }
+
+  /**
+   * Gets the value of the 'fixed_type' field.
+   * @return The value of the 'fixed_type' field.
+   */
+  public com.injavawetrust.dto.MD5 getFixedType() {
+    return fixed_type;
+  }
+
+
+  /**
+   * Sets the value of the 'fixed_type' field.
+   * @param value the value to set.
+   */
+  public void setFixedType(com.injavawetrust.dto.MD5 value) {
+    this.fixed_type = value;
+  }
+
+  /**
    * Creates a new ComplexTypes RecordBuilder.
    * @return A new ComplexTypes RecordBuilder
    */
@@ -243,6 +309,9 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
     private java.lang.Integer favorite_number;
     private java.util.List<java.lang.CharSequence> parameters;
     private com.injavawetrust.dto.Suit2 suit;
+    private java.util.Map<java.lang.CharSequence,java.lang.Integer> properties;
+    private java.lang.CharSequence optional;
+    private com.injavawetrust.dto.MD5 fixed_type;
 
     /** Creates a new Builder */
     private Builder() {
@@ -271,6 +340,18 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
         this.suit = data().deepCopy(fields()[3].schema(), other.suit);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
+      if (isValidValue(fields()[4], other.properties)) {
+        this.properties = data().deepCopy(fields()[4].schema(), other.properties);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
+      if (isValidValue(fields()[5], other.optional)) {
+        this.optional = data().deepCopy(fields()[5].schema(), other.optional);
+        fieldSetFlags()[5] = other.fieldSetFlags()[5];
+      }
+      if (isValidValue(fields()[6], other.fixed_type)) {
+        this.fixed_type = data().deepCopy(fields()[6].schema(), other.fixed_type);
+        fieldSetFlags()[6] = other.fieldSetFlags()[6];
+      }
     }
 
     /**
@@ -294,6 +375,18 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
       if (isValidValue(fields()[3], other.suit)) {
         this.suit = data().deepCopy(fields()[3].schema(), other.suit);
         fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.properties)) {
+        this.properties = data().deepCopy(fields()[4].schema(), other.properties);
+        fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.optional)) {
+        this.optional = data().deepCopy(fields()[5].schema(), other.optional);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.fixed_type)) {
+        this.fixed_type = data().deepCopy(fields()[6].schema(), other.fixed_type);
+        fieldSetFlags()[6] = true;
       }
     }
 
@@ -457,6 +550,126 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
       return this;
     }
 
+    /**
+      * Gets the value of the 'properties' field.
+      * @return The value.
+      */
+    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getProperties() {
+      return properties;
+    }
+
+
+    /**
+      * Sets the value of the 'properties' field.
+      * @param value The value of 'properties'.
+      * @return This builder.
+      */
+    public com.injavawetrust.dto.ComplexTypes.Builder setProperties(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
+      validate(fields()[4], value);
+      this.properties = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'properties' field has been set.
+      * @return True if the 'properties' field has been set, false otherwise.
+      */
+    public boolean hasProperties() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'properties' field.
+      * @return This builder.
+      */
+    public com.injavawetrust.dto.ComplexTypes.Builder clearProperties() {
+      properties = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'optional' field.
+      * @return The value.
+      */
+    public java.lang.CharSequence getOptional() {
+      return optional;
+    }
+
+
+    /**
+      * Sets the value of the 'optional' field.
+      * @param value The value of 'optional'.
+      * @return This builder.
+      */
+    public com.injavawetrust.dto.ComplexTypes.Builder setOptional(java.lang.CharSequence value) {
+      validate(fields()[5], value);
+      this.optional = value;
+      fieldSetFlags()[5] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'optional' field has been set.
+      * @return True if the 'optional' field has been set, false otherwise.
+      */
+    public boolean hasOptional() {
+      return fieldSetFlags()[5];
+    }
+
+
+    /**
+      * Clears the value of the 'optional' field.
+      * @return This builder.
+      */
+    public com.injavawetrust.dto.ComplexTypes.Builder clearOptional() {
+      optional = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'fixed_type' field.
+      * @return The value.
+      */
+    public com.injavawetrust.dto.MD5 getFixedType() {
+      return fixed_type;
+    }
+
+
+    /**
+      * Sets the value of the 'fixed_type' field.
+      * @param value The value of 'fixed_type'.
+      * @return This builder.
+      */
+    public com.injavawetrust.dto.ComplexTypes.Builder setFixedType(com.injavawetrust.dto.MD5 value) {
+      validate(fields()[6], value);
+      this.fixed_type = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'fixed_type' field has been set.
+      * @return True if the 'fixed_type' field has been set, false otherwise.
+      */
+    public boolean hasFixedType() {
+      return fieldSetFlags()[6];
+    }
+
+
+    /**
+      * Clears the value of the 'fixed_type' field.
+      * @return This builder.
+      */
+    public com.injavawetrust.dto.ComplexTypes.Builder clearFixedType() {
+      fixed_type = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public ComplexTypes build() {
@@ -466,6 +679,9 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
         record.favorite_number = fieldSetFlags()[1] ? this.favorite_number : (java.lang.Integer) defaultValue(fields()[1]);
         record.parameters = fieldSetFlags()[2] ? this.parameters : (java.util.List<java.lang.CharSequence>) defaultValue(fields()[2]);
         record.suit = fieldSetFlags()[3] ? this.suit : (com.injavawetrust.dto.Suit2) defaultValue(fields()[3]);
+        record.properties = fieldSetFlags()[4] ? this.properties : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[4]);
+        record.optional = fieldSetFlags()[5] ? this.optional : (java.lang.CharSequence) defaultValue(fields()[5]);
+        record.fixed_type = fieldSetFlags()[6] ? this.fixed_type : (com.injavawetrust.dto.MD5) defaultValue(fields()[6]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -523,6 +739,31 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
 
     out.writeEnum(this.suit.ordinal());
 
+    long size1 = this.properties.size();
+    out.writeMapStart();
+    out.setItemCount(size1);
+    long actualSize1 = 0;
+    for (java.util.Map.Entry<java.lang.CharSequence, java.lang.Integer> e1: this.properties.entrySet()) {
+      actualSize1++;
+      out.startItem();
+      out.writeString(e1.getKey());
+      java.lang.Integer v1 = e1.getValue();
+      out.writeInt(v1);
+    }
+    out.writeMapEnd();
+    if (actualSize1 != size1)
+      throw new java.util.ConcurrentModificationException("Map-size written was " + size1 + ", but element count was " + actualSize1 + ".");
+
+    if (this.optional == null) {
+      out.writeIndex(0);
+      out.writeNull();
+    } else {
+      out.writeIndex(1);
+      out.writeString(this.optional);
+    }
+
+    out.writeFixed(this.fixed_type.bytes(), 0, 16);
+
   }
 
   @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
@@ -556,8 +797,36 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
 
       this.suit = com.injavawetrust.dto.Suit2.values()[in.readEnum()];
 
+      long size1 = in.readMapStart();
+      java.util.Map<java.lang.CharSequence,java.lang.Integer> m1 = this.properties; // Need fresh name due to limitation of macro system
+      if (m1 == null) {
+        m1 = new java.util.HashMap<java.lang.CharSequence,java.lang.Integer>((int)size1);
+        this.properties = m1;
+      } else m1.clear();
+      for ( ; 0 < size1; size1 = in.mapNext()) {
+        for ( ; size1 != 0; size1--) {
+          java.lang.CharSequence k1 = null;
+          k1 = in.readString(k1 instanceof Utf8 ? (Utf8)k1 : null);
+          java.lang.Integer v1 = null;
+          v1 = in.readInt();
+          m1.put(k1, v1);
+        }
+      }
+
+      if (in.readIndex() != 1) {
+        in.readNull();
+        this.optional = null;
+      } else {
+        this.optional = in.readString(this.optional instanceof Utf8 ? (Utf8)this.optional : null);
+      }
+
+      if (this.fixed_type == null) {
+        this.fixed_type = new com.injavawetrust.dto.MD5();
+      }
+      in.readFixed(this.fixed_type.bytes(), 0, 16);
+
     } else {
-      for (int i = 0; i < 4; i++) {
+      for (int i = 0; i < 7; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           this.name = in.readString(this.name instanceof Utf8 ? (Utf8)this.name : null);
@@ -591,6 +860,40 @@ public class ComplexTypes extends org.apache.avro.specific.SpecificRecordBase im
 
         case 3:
           this.suit = com.injavawetrust.dto.Suit2.values()[in.readEnum()];
+          break;
+
+        case 4:
+          long size1 = in.readMapStart();
+          java.util.Map<java.lang.CharSequence,java.lang.Integer> m1 = this.properties; // Need fresh name due to limitation of macro system
+          if (m1 == null) {
+            m1 = new java.util.HashMap<java.lang.CharSequence,java.lang.Integer>((int)size1);
+            this.properties = m1;
+          } else m1.clear();
+          for ( ; 0 < size1; size1 = in.mapNext()) {
+            for ( ; size1 != 0; size1--) {
+              java.lang.CharSequence k1 = null;
+              k1 = in.readString(k1 instanceof Utf8 ? (Utf8)k1 : null);
+              java.lang.Integer v1 = null;
+              v1 = in.readInt();
+              m1.put(k1, v1);
+            }
+          }
+          break;
+
+        case 5:
+          if (in.readIndex() != 1) {
+            in.readNull();
+            this.optional = null;
+          } else {
+            this.optional = in.readString(this.optional instanceof Utf8 ? (Utf8)this.optional : null);
+          }
+          break;
+
+        case 6:
+          if (this.fixed_type == null) {
+            this.fixed_type = new com.injavawetrust.dto.MD5();
+          }
+          in.readFixed(this.fixed_type.bytes(), 0, 16);
           break;
 
         default:

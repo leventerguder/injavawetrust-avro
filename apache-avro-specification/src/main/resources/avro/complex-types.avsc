@@ -1,5 +1,4 @@
 [
-
   {
     "namespace": "com.injavawetrust.dto",
     "type": "enum",
@@ -11,7 +10,6 @@
       "CLUBS"
     ]
   },
-
   {
     "namespace": "com.injavawetrust.dto",
     "type": "record",
@@ -38,6 +36,29 @@
       {
         "name": "suit",
         "type": "com.injavawetrust.dto.Suit2"
+      },
+      {
+        "name": "properties",
+        "type": {
+          "type": "map",
+          "values": "int"
+        }
+      },
+      {
+        "name": "optional",
+        "type": [
+          "null",
+          "string"
+        ],
+        "default": null
+      },
+      {
+        "type": {
+          "type": "fixed",
+          "size": 16,
+          "name": "MD5"
+        },
+        "name": "fixed_type"
       }
     ]
   }
